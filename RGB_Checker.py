@@ -46,4 +46,3 @@ def RGB_picker():
     #cv2.destroyAllWindows()
     return most_frequent_pixel[1]
 
-__version__ = '0.1'
