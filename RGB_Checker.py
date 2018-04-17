@@ -2,16 +2,18 @@ import numpy as np
 import cv2
 from PIL import Image
 def RGB_picker():
-    i = cv2.imread('10.jpeg')
-    img = cv2.resize(i, (540, 960))
+    # Read in an image for testing
+    i = cv2.imread('handsomenohead.jpg')
+    img = cv2.resize(i, (720, 1280))
 
     Z = img.reshape((-1,3))
 
     # convert to np.float32
     Z = np.float32(Z)
 
-    # define criteria, number of clusters(K) and apply kmeans()
+    # define criteria, number of clusters(K) and apply kmeans clustering formula to detect most dominant colors
     criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10, 1.0)
+    # K is how many clusters to have in an image. (How many dominant colors to be used)
     K = 3
     ret,label,center=cv2.kmeans(Z,K,None,criteria,10,cv2.KMEANS_RANDOM_CENTERS)
 
@@ -19,8 +21,8 @@ def RGB_picker():
     center = np.uint8(center)
     res = center[label.flatten()]
     res2 = res.reshape((img.shape))
-
-    #cv2.imshow('res2',res2)
+    # Pop up kmeans result (Not formatted well)
+    cv2.imshow('res2',res2)
 
     #rewrite the picture and save it as test.jpg
     cv2.imwrite('test.jpg', res2)
@@ -32,7 +34,7 @@ def RGB_picker():
     #sort the list
     list.sort()
 
-    #create a variable to store the closest RBG color's number
+    #create a variable to store the first RBG color's number
     most_frequent_pixel = list[-1]
 
     for count, colour in list:
@@ -40,9 +42,13 @@ def RGB_picker():
             most_frequent_pixel = (count, colour)
 
     print most_frequent_pixel[1]
+    # Print's all colors in an image to the console
     #print test.getcolors(w * h)
 
-    #cv2.waitKey(0)
-    #cv2.destroyAllWindows()
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
     return most_frequent_pixel[1]
 
+
+
+RGB_picker()
