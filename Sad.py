@@ -18,4 +18,3 @@ def play_sadmusic():
     while pygame.mixer.music.get_busy():
         pygame.time.Clock().tick(10)
 
-play_sadmusic()
