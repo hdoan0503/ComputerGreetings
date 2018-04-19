@@ -1,6 +1,6 @@
 import cv2
 import time
-def take_picture:
+def take_picture():
     cap = cv2.VideoCapture(0)
 
     while(1):
