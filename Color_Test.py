@@ -39,23 +39,23 @@ def color_picker():
     # Takes in a list of 3 HSV values and sorts them based on their approximate color shade.
 
         # Red-> Orange
-    if(color[0,0,0] >= 0 and color[0,0,0] <= 25 and color[0,0,1] >= 100 and color[0,0,1] <=255 and color[0,0,2] >= 100 and color[0,0,2] <=255):
+    if(color[0,0,0] >= 0 and color[0,0,0] <= 25 and color[0,0,1] >= 100 and color[0,0,1] <=255 and color[0,0,2] >= 60 and color[0,0,2] <=255):
         print("red")
         color = 'red'
         # Yellow
-    elif(color[0,0,0] >= 25 and color[0,0,0] <= 40 and color[0,0,1] >= 100 and color[0,0,1] <=255 and color[0,0,2] >= 100 and color[0,0,2] <=255):
+    elif(color[0,0,0] >= 25 and color[0,0,0] <= 40 and color[0,0,1] >= 100 and color[0,0,1] <=255 and color[0,0,2] >= 60 and color[0,0,2] <=255):
         print("yellow")
         color = 'yellow'
         # Green
-    elif(color[0,0,0] >= 40 and color[0,0,0] <= 85 and color[0,0,1] >= 100 and color[0,0,1] <=255 and color[0,0,2] >= 100 and color[0,0,2] <=255):
+    elif(color[0,0,0] >= 40 and color[0,0,0] <= 85 and color[0,0,1] >= 100 and color[0,0,1] <=255 and color[0,0,2] >= 60 and color[0,0,2] <=255):
         print("green")
         color = 'green'
         # Blue
-    elif(color[0,0,0] >= 85 and color[0,0,0] <= 120 and color[0,0,1] >= 100 and color[0,0,1] <=255 and color[0,0,2] >= 100 and color[0,0,2] <=255):
+    elif(color[0,0,0] >= 85 and color[0,0,0] <= 120 and color[0,0,1] >= 100 and color[0,0,1] <=255 and color[0,0,2] >= 60 and color[0,0,2] <=255):
         print("blue")
         color = 'blue'
         #Pink->Purple
-    elif(color[0,0,0] >= 120 and color[0,0,0] <= 160 and color[0,0,1] >= 100 and color[0,0,1] <=255 and color[0,0,2] >= 100 and color[0,0,2] <=255):
+    elif(color[0,0,0] >= 120 and color[0,0,0] <= 160 and color[0,0,1] >= 100 and color[0,0,1] <=255 and color[0,0,2] >= 60 and color[0,0,2] <=255):
         print("pink")
         color = 'pink'
         # Black
