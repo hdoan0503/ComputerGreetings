@@ -14,22 +14,22 @@ RGB_Checker.RGB_picker()
 colorPicture = Color_Test.color_picker()
 
 if(colorPicture == 'red'):
-    #play red music
+    #Happy.play_happymusic()
     print 'red'
 elif(colorPicture == 'blue'):
-    #play blue music
+    #Sad.play_sadmusic()
     print 'blue'
 elif(colorPicture == 'yellow'):
-    #play yellow music
+    #Happy.play_happymusic()
     print 'yellow'
 elif(colorPicture == 'pink'):
-    #play pink music
+    #Happy.play_happymusic()
     print 'pink'
 elif(colorPicture == 'green'):
-    #play green music
+    #Happy.play_happymusic()
     print 'green'
 elif(colorPicture == 'black'):
-    #play black music
+    #Sad.play_sadmusic()
     print 'black'
 else:
     print 'Can not define the color. Play random music'
