@@ -1,9 +1,19 @@
 import Color_Test
 import CapturePicture
 import RGB_Checker
-#import Happy
-#import Sad
+import pygame
+import RandomSong
 
+#loading sound
+pygame.mixer.init()
+music = pygame.mixer.music
+timer = pygame.time.Clock()
+red = 'redorange.mp3'
+blue = 'blue.mp3'
+yellow = 'yellow.mp3'
+pink = 'PinkPurple.mp3'
+green = 'green.mp3'
+black = 'black.mp3'
 #take the picture
 CapturePicture.take_picture()
 
@@ -14,22 +24,44 @@ RGB_Checker.RGB_picker()
 colorPicture = Color_Test.color_picker()
 
 if(colorPicture == 'red'):
-    #Happy.play_happymusic()
     print 'red'
+    music.load(red)
+    music.play()
+    while music.get_busy():
+        timer.tick(60)
+
 elif(colorPicture == 'blue'):
-    #Sad.play_sadmusic()
     print 'blue'
+    music.load(blue)
+    music.play()
+    while music.get_busy():
+        timer.tick(60)
+
 elif(colorPicture == 'yellow'):
-    #Happy.play_happymusic()
     print 'yellow'
+    music.load(yellow)
+    music.play()
+    while music.get_busy():
+        timer.tick(60)
+    
 elif(colorPicture == 'pink'):
-    #Happy.play_happymusic()
     print 'pink'
+    music.load(pink)
+    music.play()
+    while music.get_busy():
+        timer.tick(60)
 elif(colorPicture == 'green'):
-    #Happy.play_happymusic()
     print 'green'
+    music.load(green)
+    music.play()
+    while music.get_busy():
+        timer.tick(60)
 elif(colorPicture == 'black'):
-    #Sad.play_sadmusic()
     print 'black'
+    music.load(black)
+    music.play()
+    while music.get_busy():
+        timer.tick(60)
 else:
     print 'Can not define the color. Play random music'
+    RandomSong.play_randomSong()
