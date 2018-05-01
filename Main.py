@@ -43,7 +43,7 @@ elif(colorPicture == 'yellow'):
     music.play()
     while music.get_busy():
         timer.tick(60)
-    
+
 elif(colorPicture == 'pink'):
     print 'pink'
     music.load(pink)
