@@ -3,7 +3,7 @@ import cv2
 from PIL import Image
 def RGB_picker():
     # Read in an image for testing
-    i = cv2.imread('handsomenohead.jpg')
+    i = cv2.imread('hello.jpg')
     img = cv2.resize(i, (720, 1280))
 
     Z = img.reshape((-1,3))
@@ -21,7 +21,7 @@ def RGB_picker():
     center = np.uint8(center)
     res = center[label.flatten()]
     res2 = res.reshape((img.shape))
-    # Pop up kmeans result (Not formatted well)
+    #Pop up kmeans result (Not formatted well)
     cv2.imshow('res2',res2)
 
     #rewrite the picture and save it as test.jpg
@@ -29,26 +29,29 @@ def RGB_picker():
     test = Image.open('test.jpg')
     w, h = test.size
 
-    #make a list of all RGB number which is appearing on the picture
+
+    # Print's all colors in an image to the console
+    #print test.getcolors(w * h)
+    k = cv2.waitKey(2000)
+    cv2.destroyAllWindows()
+
+    #create a variable to store the first RBG color's number
+        #make a list of all RGB number which is appearing on the picture
     list = test.getcolors(w * h)
     #sort the list
     list.sort()
-
-    #create a variable to store the first RBG color's number
     most_frequent_pixel = list[-1]
 
     for count, colour in list:
         if count > most_frequent_pixel[0]:
             most_frequent_pixel = (count, colour)
-
-    print most_frequent_pixel[1]
-    # Print's all colors in an image to the console
-    #print test.getcolors(w * h)
-
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    #print most_frequent_pixel[1]
     return most_frequent_pixel[1]
 
 
 
-RGB_picker()
+
+
+
+
+
